@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>السجل المدني السوداني | Sudan Civil Registry</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Arial,sans-serif}
+  :root{--blue:#0B2C4A;--blue2:#14456E;--gold:#C9A227;--light:#F4F6F8;--white:#fff;--green:#1A9A5A;--red:#D32F2F}
+  body{background:var(--light);color:#222;line-height:1.7}
+  /* Header */
+  header{background:var(--blue);color:#fff;padding:15px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+  .container{max-width:1100px;margin:auto;padding:0 15px}
+  .nav{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px}
+  .logo span{background:var(--gold);color:var(--blue);width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:24px}
+  .nav-links{display:flex;gap:5px;flex-wrap:wrap}
+  .nav-links button{background:transparent;border:0;color:#fff;padding:9px 14px;border-radius:20px;cursor:pointer;font-weight:700;font-size:15px}
+  .nav-links button:hover,.nav-links button.active{background:var(--gold);color:var(--blue)}
+  /* Hero */
+  .hero{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;padding:50px 15px;text-align:center;border-bottom:5px solid var(--gold)}
+  .hero h1{font-size:32px;margin-bottom:10px}
+  .hero p{opacity:.9;max-width:700px;margin:auto}
+  .hero-btns{margin-top:22px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{border:0;padding:13px 26px;border-radius:30px;font-weight:800;cursor:pointer;font-size:16px;transition:.2s}
+  .btn-gold{background:var(--gold);color:var(--blue)}
+  .btn-white{background:#fff;color:var(--blue)}
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn:hover{transform:scale(1.03);opacity:.9}
+  /* Sections */
+  .page{display:none;padding:25px 0 60px}
+  .page.active{display:block}
+  .card{background:#fff;border-radius:16px;padding:22px;box-shadow:0 3px 15px rgba(0,0,0,.07);margin-bottom:18px}
+  .card h2{color:var(--blue);margin-bottom:10px;border-right:5px solid var(--gold);padding-right:10px}
+  .card h3{color:var(--blue2);margin:12px 0 6px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:15px;margin-top:15px}
+  .service{background:#fff;border:2px solid #E8EDF1;border-radius:16px;padding:20px;text-align:center;cursor:pointer;transition:.2s}
+  .service:hover{border-color:var(--gold);transform:translateY(-3px)}
+  .service .icon{font-size:38px;margin-bottom:8px}
+  .service h3{color:var(--blue)}
+  .service p{font-size:14px;color:#666}
+  .badge{display:inline-block;background:#FFF3CD;color:#856404;padding:5px 12px;border-radius:20px;font-size:13px;font-weight:700}
+  .badge-green{background:#D4EDDA;color:#155724}
+  ul{list-style:none}
+  ul li{padding:7px 0;border-bottom:1px dashed #eee;padding-right:18px;position:relative}
+  ul li:before{content:"✔";position:absolute;right:0;color:var(--green);font-weight:900}
+  input,select,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;margin:7px 0 12px;font-size:15px}
+  label{font-weight:700;color:var(--blue)}
+  .success{background:#D4EDDA;color:#155724;padding:15px;border-radius:12px;text-align:center;font-weight:700;display:none;margin-top:10px}
+  .track-result{background:#EAF2FF;padding:15px;border-radius:12px;margin-top:12px;display:none}
+  table{width:100%;border-collapse:collapse;margin-top:10px;font-size:14px}
+  th,td{padding:11px;border:1px solid #eee;text-align:right}
+  th{background:var(--blue);color:#fff}
+  .faq-item{border:1px solid #eee;border-radius:12px;margin-bottom:10px;overflow:hidden}
+  .faq-q{background:#fff;padding:13px;cursor:pointer;font-weight:700;color:var(--blue);display:flex;justify-content:space-between}
+  .faq-a{display:none;padding:13px;background:#F9FAFB}
+  footer{background:var(--blue);color:#fff;text-align:center;padding:25px 15px;margin-top:20px}
+  footer a{color:var(--gold);text-decoration:none}
+  @media(max-width:600px){.hero h1{font-size:24px}.logo{font-size:17px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo"><span>🇸🇩</span> السجل المدني السوداني</div>
+    <div class="nav-links">
+      <button class="active" onclick="showPage('home',this)">الرئيسية</button>
+      <button onclick="showPage('services',this)">الخدمات</button>
+      <button onclick="showPage('booking',this)">حجز موعد</button>
+      <button onclick="showPage('track',this)">تتبع طلبك</button>
+      <button onclick="showPage('branches',this)">الفروع</button>
+      <button onclick="showPage('faq',this)">الأسئلة الشائعة</button>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <h1>أهلاً بيك في السجل المدني السوداني</h1>
+    <p>استخرج الرقم الوطني، الجواز، البطاقة القومية وشهادة الميلاد بسهولة. احجز موعدك أونلاين وتابع طلبك من بيتك.</p>
+    <div class="hero-btns">
+      <button class="btn btn-gold" onclick="goTo('booking')">📅 احجز موعدك الآن</button>
+      <button class="btn btn-white" onclick="goTo('track')">🔍 تتبع طلبك</button>
+    </div>
+  </div>
+  <div class="container">
+    <div class="grid">
+      <div class="card" style="text-align:center"><div style="font-size:40px">🪪</div><h3>الرقم الوطني</h3><p>أهم مستند لأي مواطن سوداني</p><span class="badge badge-green">متاح الآن</span></div>
+      <div class="card" style="text-align:center"><div style="font-size:40px">🛂</div><h3>الجواز الإلكتروني</h3><p>قدم وحجز موعدك للتصوير والبصمة</p><span class="badge badge-green">متاح الآن</span></div>
+      <div class="card" style="text-align:center"><div style="font-size:40px">💳</div><h3>البطاقة القومية</h3><p>إثبات شخصية رسمي معتمد</p><span class="badge">قريباً في الولايات</span></div>
+      <div class="card" style="text-align:center"><div style="font-size:40px">👶</div><h3>شهادة الميلاد</h3><p>للأطفال الجدد بسهولة وسرعة</p><span class="badge badge-green">متاح الآن</span></div>
+    </div>
+    <div class="card"><h2>لماذا تختار موقعنا؟</h2><ul><li>توفير الزمن - ما محتاج تمشي وتقيف في الصف</li><li>معرفة كل الأوراق المطلوبة قبل ما تمشي</li><li>حجز موعد مضمون في الفرع القريب ليك</li><li>تتبع طلبك لحدي ما يجهز</li></ul></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div id="services" class="page">
+  <div class="container">
+    <h2 style="color:var(--blue);margin-bottom:15px">خدماتنا</h2>
+    <div class="grid">
+      <div class="service" onclick="openService('national')"><div class="icon">🪪</div><h3>الرقم الوطني</h3><p>اضغط لمعرفة الأوراق والرسوم</p></div>
+      <div class="service" onclick="openService('passport')"><div class="icon">🛂</div><h3>الجواز الإلكتروني</h3><p>اضغط لمعرفة الأوراق والرسوم</p></div>
+      <div class="service" onclick="openService('card')"><div class="icon">💳</div><h3>البطاقة القومية</h3><p>اضغط لمعرفة الأوراق والرسوم</p></div>
+      <div class="service" onclick="openService('birth')"><div class="icon">👶</div><h3>شهادة الميلاد</h3><p>اضغط لمعرفة الأوراق والرسوم</p></div>
+    </div>
+    <div id="serviceDetail" class="card"><h2>اختر خدمة من فوق لعرض التفاصيل</h2><p>حتلقى هنا المستندات المطلوبة والرسوم وخطوات التقديم.</p></div>
+  </div>
+</div>
+
+<!-- BOOKING -->
+<div id="booking" class="page">
+  <div class="container">
+    <div class="card"><h2>📅 حجز موعد</h2><p>املأ البيانات دي وحجزك حيتم طوالي.</p>
+      <label>الاسم الكامل</label><input id="bName" placeholder="مثال: فاطمة أحمد محمد">
+      <label>رقم التلفون</label><input id="bPhone" placeholder="09xxxxxxxx">
+      <label>نوع الخدمة</label><select id="bService"><option>الرقم الوطني</option><option>الجواز الإلكتروني</option><option>البطاقة القومية</option><option>شهادة الميلاد</option><option>بدل فاقد</option></select>
+      <label>الفرع</label><select id="bBranch"><option>أمدرمان - شارع العرضة</option><option>الخرطوم - السجانة</option><option>بحري - المحطة الوسطى</option><option>مدني</option><option>بورتسودان</option></select>
+      <label>تاريخ الموعد</label><input type="date" id="bDate">
+      <button class="btn btn-blue" style="width:100%" onclick="doBooking()">تأكيد الحجز ✅</button>
+      <div id="bookingSuccess" class="success"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK -->
+<div id="track" class="page">
+  <div class="container">
+    <div class="card"><h2>🔍 تتبع طلبك</h2><p>اكتب رقم الطلب الحتستلمو بعد الحجز.</p>
+      <label>رقم الطلب</label><input id="trackNo" placeholder="مثال: 12345">
+      <button class="btn btn-gold" style="width:100%" onclick="doTrack()">ابحث عن طلبي</button>
+      <div id="trackResult" class="track-result"></div>
+      <p style="margin-top:10px;font-size:13px;color:#888">جرّب: اكتب أي رقم، مثال 12345</p>
+    </div>
+  </div>
+</div>
+
+<!-- BRANCHES -->
+<div id="branches" class="page">
+  <div class="container">
+    <div class="card"><h2>📍 فروعنا ومواعيد الدوام</h2><p>الدوام: الأحد - الخميس | من 8 صباحاً حتى 3 ظهراً</p>
+      <table><tr><th>الفرع</th><th>العنوان</th><th>رقم التواصل</th></tr>
+      <tr><td>أمدرمان</td><td>شارع العرضة، جوار المستشفى</td><td>0912345678</td></tr>
+      <tr><td>الخرطوم</td><td>السجانة، شارع الحرية</td><td>0912345679</td></tr>
+      <tr><td>بحري</td><td>المحطة الوسطى</td><td>0912345680</td></tr>
+      <tr><td>مدني</td><td>شارع النيل</td><td>0912345681</td></tr>
+      <tr><td>بورتسودان</td><td>السوق الكبير</td><td>0912345682</td></tr></table>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="page">
+  <div class="container">
+    <div class="card"><h2>❓ الأسئلة الشائعة</h2>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">ضاع الرقم الوطني حقي، أعمل شنو؟ <span>+</span></div><div class="faq-a">تمشي الفرع، تعمل بلاغ فقدان، وتقدم لبدل فاقد بنفس أوراقك القديمة.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">الجواز بياخد كم يوم عشان يطلع؟ <span>+</span></div><div class="faq-a">عادة من 7 لـ 14 يوم عمل، وبتقدر تتابعه من صفحة تتبع طلبك.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">ممكن زول يقدم لي بالنيابة؟ <span>+</span></div><div class="faq-a">لا، لازم الحضور الشخصي عشان البصمة والتصوير.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">شنو الأوراق المطلوبة للرقم الوطني؟ <span>+</span></div><div class="faq-a">شهادة ميلاد، الرقم الوطني للأب أو الأم، وصورتين فوتوغرافية.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p><b>السجل المدني السوداني</b> - خدمة المواطن أولاً 🇸🇩</p>
+  <p>للاستفسار: 0912345678 | info@civil.sd</p>
+  <p style="margin-top:8px;font-size:13px;opacity:.7">© 2026 جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function goTo(id){
+  showPage(id);
+  let btns=document.querySelectorAll('.nav-links button');
+  let map={home:0,services:1,booking:2,track:3,branches:4,faq:5};
+  if(map[id]!==undefined) btns[map[id]].classList.add('active');
+}
+function openService(type){
+  let d=document.getElementById('serviceDetail');
+  if(type==='national') d.innerHTML=`<h2>🪪 الرقم الوطني</h2><h3>المستندات المطلوبة:</h3><ul><li>شهادة ميلاد أصلية</li><li>الرقم الوطني للأب أو الأم</li><li>صورتين فوتوغرافية</li></ul><h3>الخطوات:</h3><ul><li>احجز موعدك</li><li>الحضور للفرع مع الأوراق</li><li>البصمة والتصوير</li><li>استلام الرقم</li></ul><br><button class="btn btn-gold" onclick="goTo('booking')">احجز موعد لهذه الخدمة</button>`;
+  if(type==='passport') d.innerHTML=`<h2>🛂 الجواز الإلكتروني</h2><h3>المستندات المطلوبة:</h3><ul><li>الرقم الوطني الأصل</li><li>صورتين فوتوغرافية</li><li>رسوم الجواز</li></ul><h3>الخطوات:</h3><ul><li>حجز موعد</li><li>الحضور للتصوير والبصمة</li><li>استلام الجواز بعد 7-14 يوم</li></ul><br><button class="btn btn-gold" onclick="goTo('booking')">احجز موعد لهذه الخدمة</button>`;
+  if(type==='card') d.innerHTML=`<h2>💳 البطاقة القومية</h2><h3>المستندات المطلوبة:</h3><ul><li>الرقم الوطني</li><li>صورة فوتوغرافية</li></ul><p>تستخدم كإثبات شخصية رسمي في كل المعاملات الحكومية والبنكية.</p><br><button class="btn btn-gold" onclick="goTo('booking')">احجز موعد لهذه الخدمة</button>`;
+  if(type==='birth') d.innerHTML=`<h2>👶 شهادة الميلاد</h2><h3>المستندات المطلوبة:</h3><ul><li>إفادة المستشفى</li><li>الرقم الوطني للأب والأم</li></ul><p>لازم تطلع خلال أول شهر من الولادة.</p><br><button class="btn btn-gold" onclick="goTo('booking')">احجز موعد لهذه الخدمة</button>`;
+  d.scrollIntoView({behavior:'smooth'});
+}
+function doBooking(){
+  let n=document.getElementById('bName').value;
+  let s=document.getElementById('bService').value;
+  let b=document.getElementById('bBranch').value;
+  let d=document.getElementById('bDate').value;
+  let box=document.getElementById('bookingSuccess');
+  if(!n){alert('اكتب اسمك أولاً');return;}
+  let num=Math.floor(10000+Math.random()*89999);
+  box.style.display='block';
+  box.innerHTML=`تم حجز موعدك بنجاح يا ${n} ✅<br>الخدمة: ${s}<br>الفرع: ${b}<br>التاريخ: ${d || 'حسب المتاح'}<br><b>رقم طلبك: ${num} - احفظه لتتبع طلبك</b>`;
+}
+function doTrack(){
+  let v=document.getElementById('trackNo').value;
+  let r=document.getElementById('trackResult');
+  if(!v){alert('اكتب رقم الطلب');return;}
+  r.style.display='block';
+  r.innerHTML=`<b>رقم الطلب: ${v}</b><br>الحالة: <b style="color:green">قيد المعالجة ⏳</b><br>الخطوة: تم استلام أوراقك، جاري طباعة المستند.<br>تاريخ الاستلام المتوقع: خلال 5 أيام.`;
+}
+function toggleFaq(el){
+  let a=el.nextElementSibling;
+  let open=a.style.display==='block';
+  document.querySelectorAll('.faq-a').forEach(x=>x.style.display='none');
+  a.style.display=open?'none':'block';
+}
+</script>
+</body>
+</html>
